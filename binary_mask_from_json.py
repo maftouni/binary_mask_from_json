@@ -26,9 +26,12 @@ for j in range(len(all_file_names)):
     if data[all_file_names[j]]['regions'] != {}:
         #cv2.imwrite('images/%05.0f' % j +'.jpg',img)
         print(j)
-        shape1_x=data[all_file_names[j]]['regions']['0']['shape_attributes']['all_points_x']
-        shape1_y=data[all_file_names[j]]['regions']['0']['shape_attributes']['all_points_y']
-    
+        try: 
+             shape1_x=data[all_file_names[j]]['regions']['0']['shape_attributes']['all_points_x']
+             shape1_y=data[all_file_names[j]]['regions']['0']['shape_attributes']['all_points_y']
+        except : 
+             shape1_x=data[all_file_names[j]]['regions'][0]['shape_attributes']['all_points_x']
+             shape1_y=data[all_file_names[j]]['regions'][0]['shape_attributes']['all_points_y']
     
         fig = plt.figure()
       
